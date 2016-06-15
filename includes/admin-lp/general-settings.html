@@ -1,0 +1,24 @@
+<div class="wrap">
+    <h2>Lokalpages General Settings</h2>
+    <div class="postbox">
+            <div class="inside"> 
+                <form action="" name="frm-lp-general-settings" method="post">
+                    <label style="display: block; font-size: 16px; font-weight: bold;" for="lplandingtxtheader">Landing page Text Header:</label>
+                    <textarea cols="100" rows="5" name="lplandingtxtheader" id="lplandingtxtheader"><?php echo $lplandingtxtheader;?></textarea>
+                    <br />
+                    <label style="display: block; font-size: 16px; font-weight: bold;" for="lplandingbg">Landing page background image(URL, size 1600x1064):</label>
+                    <input style="width: 500px;" type="text" name="lplandingbg" id="lplandingbg" value="<?php echo $lplandingbg;?>">
+                    <div style="padding-top: 10px;"><input type="submit" class="update-landing-bg-img button-primary" name="update-lp-landing-bg-image" value="Update"></div>
+                </form>
+            </div>
+    </div>
+    <div class="postbox">
+        <div class="inside"> 
+                <form action="" name="frm-lp-general-settings" method="post">
+                    <label style="display: block" for="listingfooteroutput">After listing output:</label>
+                    <textarea cols="100" rows="5" name="listingfooteroutput" id="listingfooteroutput"><?php echo $listingfooteroutput;?></textarea>
+                    <div style="padding-top: 10px;"><input type="submit" class="update-landing-bg-img button-primary" name="update-after-listing-output" value="Update"></div>
+                </form>
+            </div>
+    </div>
+</div>

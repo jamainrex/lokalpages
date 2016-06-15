@@ -1,0 +1,81 @@
+body.login                          { background: #ffffff; }
+.login h1 a                         { background-size: auto; background-position: center center; height: 150px; vertical-align: middle; }
+.login form                         { background: #fbfbfb; box-shadow: none; margin: 0 0 20px 0; }
+.login #loginform input             { background: #ffffff; box-shadow: none; border-radius: 0; border-color: #D5D5D5; }
+.login #loginform input:focus       { border-color: #D5D5D5; }
+.login #loginform input#wp-submit   { font-weight: bold; text-shadow: none; border: none; border-radius: 5px; }
+.login form .forgetmenot label      { line-height: 27px; }
+
+.login #nav                         { display: block; float: right; margin: 0; padding: 0; }
+.login #backtoblog                  { display: block; float: left; margin: 0; padding: 0; }
+
+.login .message                     { margin-left: 0; }
+.login h1 a { width: auto !important; }
+
+<?php 
+
+function lpadjustBrightness($hex, $steps) {
+    // Steps should be between -255 and 255. Negative = darker, positive = lighter
+    $steps = max(-255, min(255, $steps));
+
+    // Format the hex color string
+    $hex = str_replace('#', '', $hex);
+    if (strlen($hex) == 3) {
+        $hex = str_repeat(substr($hex,0,1), 2).str_repeat(substr($hex,1,1), 2).str_repeat(substr($hex,2,1), 2);
+    }
+
+    // Get decimal values
+    $r = hexdec(substr($hex,0,2));
+    $g = hexdec(substr($hex,2,2));
+    $b = hexdec(substr($hex,4,2));
+
+    // Adjust number of steps and keep it inside 0 to 255
+    $r = max(0,min(255,$r + $steps));
+    $g = max(0,min(255,$g + $steps));  
+    $b = max(0,min(255,$b + $steps));
+
+    $r_hex = str_pad(dechex($r), 2, '0', STR_PAD_LEFT);
+    $g_hex = str_pad(dechex($g), 2, '0', STR_PAD_LEFT);
+    $b_hex = str_pad(dechex($b), 2, '0', STR_PAD_LEFT);
+
+    return '#'.$r_hex.$g_hex.$b_hex;
+}
+
+?>
+
+<?php if(!empty($GLOBALS['aitThemeOptions']->general->logo_img)) { ?>
+h1 a { background: url('<?php echo $GLOBALS['aitThemeOptions']->general->logo_img; ?>') no-repeat top center !important; } 
+<?php } ?>
+
+<?php if(!empty($GLOBALS['aitThemeOptions']->colors->firstThemeColor)) { ?>
+
+.login #loginform input#wp-submit { <?php echo "background:" . $GLOBALS['aitThemeOptions']->colors->firstThemeColor . 
+                                             "; border-bottom: 3px solid " . lpadjustBrightness($GLOBALS['aitThemeOptions']->colors->firstThemeColor, -30) . ";"; ?> }
+<?php } ?>
+
+<?php if(!empty($GLOBALS['aitThemeOptions']->fonts->linksFontColor)) { ?>
+.login #nav a, .login #backtoblog a               { color: <?php echo $GLOBALS['aitThemeOptions']->fonts->linksFontColor; ?> !important; }
+.login #nav a:hover, .login #backtoblog a:hover   { color: <?php echo lpadjustBrightness($GLOBALS['aitThemeOptions']->fonts->linksFontColor, -50); ?> !important; }
+<?php } ?>
+
+<?php 
+$lpLandingBGImg_default = THEME_URL."/design/img/billboard/bg1.jpg";
+$lpLandingBGImage = get_option( 'lp_landing_bg_image_2' );
+if( !$lpLandingBGImage ) $lpLandingBGImage = $lpLandingBGImg_default;?>
+body.login{
+    margin: 0 !important;
+    padding: 0 !important;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    background-image: url("<?php echo $lpLandingBGImage; ?>");
+                }
+#login h1{
+    background-color: #fbfbfb;
+}

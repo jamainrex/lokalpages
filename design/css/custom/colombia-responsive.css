@@ -1,0 +1,177 @@
+/* =Responsive Structure
+----------------------------------------------- */
+/* =================== */
+/* = MAX-WIDTH 1024px = */
+/* =================== */
+/* Desktop */
+@media all and (max-width: 1024px) {
+
+   body { min-width: 768px; max-width: 1024px; }
+   .defaultContentWidth{
+       width: 98%;
+       max-width: none;
+   }
+   #directory-search .defaultContentWidth{
+        width: 100%; 
+   }
+   #dir-search-inputs {
+        padding: 20px 5%;
+        width: 90%;
+    }
+    #dir-search-button {
+        padding: 20px 0;
+        text-align: center;
+        width: 98%;
+    }
+    #lpc-search-form {
+        width: 90%;
+    }
+    
+    #content{
+        padding: 15px 5px 0 !important;
+        width: auto !important;
+    }
+    #bb-header-text{
+        width: auto !important;
+    }
+}
+
+/* =================== */
+/* = MAX-WIDTH 768px = */
+/* =================== */
+ 
+
+@media all and (max-width: 768px) {
+    body { min-width: 320px; max-width: 768px; }
+    
+    #dir-holder input#dir-searchinput-category, #dir-holder input#dir-searchinput-location {
+        width: auto;
+    }
+    #dir-holder input {
+        max-width: 110px;
+    }
+    #bb-header-text{
+        width: auto !important;
+    }
+    
+    #lpc-search-form-wrap{
+        margin: 40px auto 0 !important;
+    }
+    .lpc-sc{
+        padding-top: 0;
+        top: 50px;
+    }
+    
+    #crp_related li {
+        
+    }
+}
+
+/* =================== */
+/* = MAX-WIDTH 650px = */
+/* =================== */
+
+
+@media all and (max-width: 650px) {
+      #dir-holder input {
+        max-width: 85px;
+    }
+    
+    /**
+    * Mobile Menu
+    */
+    #access {
+        background: none repeat scroll 0 0 #eeeeee;
+        border-top: 1px solid #cccccc;
+        float: none;
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 0;
+        text-align: center;
+        display: block;
+    }
+    #mobile_only{
+        display: block;
+        
+    }
+
+    #mobile-menu{
+        display: block;
+    }
+
+    #mobile-menu li {
+         display: block;
+        float: none;
+        position: relative;   
+        border-bottom: 1px dotted #333; 
+    }
+
+    #mobile-menu li:hover {
+        background-color: #73ac4b;   
+    }
+
+    #mobile-menu a, #mobile-menu a:hover, #mobile-menu a:focus {
+        color: #333333 !important;
+        display: block;
+        margin: 0;
+        padding: 10px 5px;
+        text-align: left;
+        font-size: 14px;
+    }
+    
+    #globalnavheader ul,
+    .assistive-text { display: none; }
+    .responsive-menu { display: inline; padding: 10px; }
+    
+    #globalnavheader .mainmenu{
+        display: block;
+        margin-left: 0;
+    }
+    
+    #globalnavheader {
+        display: block;
+        float: none;
+        height: auto;
+    }
+    #bb-header-text{
+        width: auto !important;
+    }
+    
+    #crp_related li {
+        width: 100% !important;
+        text-align: center !important;
+    }
+      
+}      
+
+/* =================== */
+/* = MAX-WIDTH 480px = */
+/* =================== */
+
+
+@media all and (max-width: 497px) {
+    #dir-holder input {
+        max-width: 100%;
+    }
+    
+    #content, .onecolumn #content{
+        max-width: none;
+        width: 98% !important;
+        margin: 0 auto;
+    }
+    #secondary{
+        max-width: none !important;
+        width: 85% !important;
+        margin: 0 auto;
+    }
+    #bb-header-text{
+        width: auto !important;
+    }
+    
+    div.wpcf7 {
+    width: 90% !important;
+    }
+    .wpcf7 input, .wpcf7 textarea {
+    width: 100% !important;
+    }
+}

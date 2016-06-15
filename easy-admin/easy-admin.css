@@ -1,0 +1,39 @@
+/* screen options */
+#screen-meta,
+#screen-meta-links						{ display: none; }
+
+/* menu */
+#adminmenuwrap,
+#adminmenuback							{ display: none; }
+#wpcontent                              { max-width: 100%; margin: 0 !important; padding: 0; }
+#wpbody, .ait-easy-admin-wrap           { height: auto; max-width: 1000px; padding: 0 20px; margin: 0 auto 10px !important; }
+.ait-easy-admin-wrap                    { padding: 0; }
+
+/* footer */
+#wpfooter								{ display: none !important; }
+
+/* table nav */
+#posts-filter .tablenav 				{ display: none; }
+#posts-filter .wp-list-table tfoot 		{ display: none; }
+#posts-filter .search-box 				{ display: none; }
+
+/* add new item */
+.add-new-h2 							{ display: none; }
+.ait-easy-admin-footer 					{ }
+.ait-easy-admin-footer .add-item 		{ }
+
+#postexcerpt .inside p 					{ display: none; }
+
+/* buttons */
+.ait-easy-admin-header .buttons 		{ position: relative; margin: 10px auto; }
+.ait-easy-admin-header a.button,
+.ait-easy-admin-header a.button-primary { width: 250px; height: 50px; text-align: center; padding: 10px; font-size: 30px; margin-right: 15px; }
+
+/* body */
+#wpbody-content 						{ padding-bottom: 0px; }
+
+/* profile init form */
+.wp-admin.js.profile-php #wpbody-content { display: none; }  
+
+
+input[type="text"], input[type="password"], textarea { border: 1px solid #CCCCCC; }

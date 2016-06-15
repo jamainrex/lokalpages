@@ -1,0 +1,17 @@
+.dir-input-animate{
+    margin-bottom: -10px;
+}
+
+.dir-header-animate{
+    position: fixed;
+    clear: both;
+    display: block;
+    width: 100%;
+    z-index: 999;
+    top: 33px;
+    background: repeat scroll 0 0 #d0cebb;
+}
+
+.dir-header-logo-animate{
+    height: 40px;
+}

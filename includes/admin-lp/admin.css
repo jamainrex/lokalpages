@@ -1,0 +1,10 @@
+.vnbox-title{
+    padding: 7px 10px;
+}
+table.lp-addlisting-table {
+    width: 100%;
+    border: solid 1px #444444;
+}
+table.lp-addlisting-table td {
+   border: solid 1px #444444; 
+}

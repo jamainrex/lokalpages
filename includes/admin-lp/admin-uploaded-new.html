@@ -1,0 +1,64 @@
+<?php if (!defined('ABSPATH')) die('No direct access allowed!');
+
+global $wp_roles, $wpdb, $table_prefix;
+
+$sql_n = "select * from lpd_biz_submitted where uploaded is not null and deleted is null and bsid > 62";
+$listings = $wpdb->get_results($sql_n);
+
+?>
+<div class="wrap">
+    <h2>Uploaded Listing Submission</h2>
+    
+    <div class="postbox">
+        <h3 class="vnbox-title">Listings</h3>
+        <div class="inside">
+            <?php 
+            if ($listings) {
+                  echo '<table cellpadding="5" class="lp-addlisting-table">';
+                  echo '<tr><th width="2%">ID</th>';
+                  echo '<th width="8%">Sender Name</th>';
+                  echo '<th width="8%">Sender Email</th>';
+                  echo '<th width="8%">Name</th>';
+                  echo '<th width="8%">Logo</th>';
+                  echo '<th width="8%">Address</th>';
+                  echo '<th width="8%">Telephone</th>';
+                  echo '<th width="8%">Mobile</th>';
+                  echo '<th width="8%">Category</th>';
+                  echo '<th width="8%">Other Category</th>';
+                  echo '<th width="8%">Web</th>';
+                  echo '<th width="15%">Description</th>';
+                  echo '<th width="8%">Uploaded</th>';
+                  echo '<th width="8%">Action</th></tr>';
+                  
+                  foreach( $listings as $row ){
+                  $biz_info = json_decode($row->info);   
+                  $biz_info = get_object_vars($biz_info);
+                  $biz_files = json_decode($row->files);
+                  $biz_files = get_object_vars($biz_files);
+                  $logo = '<img width="100" src="http://lokalpages.com/wp-content/uploads/lp_submission/'.$biz_files['photo1st']->name.'" />';
+                  $cats = implode(", ", $biz_info['wpcf7listingCat']);
+                  //echo '<pre>'.print_r($biz_files,true).'</pre>';
+                  // Each $row is a row from the query
+                  echo '<tr>';
+                  echo '<td>' . $row->bsid . '</td>';
+                  echo '<td>' . $biz_info['fname'] . ' ' . $biz_info['lname'] . '</td>';  
+                  echo '<td>' . $biz_info['your-email'] . '</td>';
+                  echo '<td>' . $biz_info['bizname'] . '</td>';
+                  echo '<td>' . $logo . '</td>';
+                  echo '<td>' . $biz_info['bizaddress'] . '</td>';
+                  echo '<td>' . $biz_info['bizphone'] . '</td>';
+                  echo '<td>' . $biz_info['bizmobile'] . '</td>';
+                  echo '<td>' . $cats . '</td>';
+                  echo '<td>' . $biz_info['othercat'] . '</td>';
+                  echo '<td>' . $biz_info['bizweb'] . '</td>';
+                  echo '<td>' . $biz_info['desc'] . '</td>';
+                  echo '<td>' . $row->uploaded . '</td>';
+                  echo '<td style="text-align:center;"><input style="margin-bottom: 3px;" class="re_upload_listing button-primary" type="button" lang="'.$row->bsid.'" value="Re-Upload"></td>';
+                  echo '</tr>';
+                      }
+                  
+            }     echo '</table>';
+            ?>
+        </div>
+    </div>
+</div>

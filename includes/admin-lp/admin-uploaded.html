@@ -1,0 +1,59 @@
+<?php if (!defined('ABSPATH')) die('No direct access allowed!');
+
+global $wp_roles, $wpdb, $table_prefix;
+
+$sql_n = "select * from lpd_biz_submitted where uploaded is not null and deleted is null";
+$listings = $wpdb->get_results($sql_n);
+
+?>
+<div class="wrap">
+    <h2>Uploaded Listing Submission</h2>
+    
+    <div class="postbox">
+        <h3 class="vnbox-title">Listings</h3>
+        <div class="inside">
+            <?php 
+            if ($listings) {
+                  echo '<table cellpadding="5" class="lp-addlisting-table">';
+                  echo '<tr><th width="2%">ID</th>';
+                  echo '<th width="8%">Sender Name</th>';
+                  echo '<th width="8%">Sender Email</th>';
+                  echo '<th width="8%">Name</th>';
+                  echo '<th withd="8%">Address</th>';
+                  echo '<th withd="8%">Telephone</th>';
+                  echo '<th withd="8%">Mobile</th>';
+                  echo '<th withd="8%">Category</th>';
+                  echo '<th withd="8%">Other Category</th>';
+                  echo '<th withd="8%">Web</th>';
+                  echo '<th withd="15%">Description</th>';
+                  echo '<th withd="8%">Uploaded</th>';
+                  echo '<th width="8%">Action</th></tr>';
+                  
+                  foreach( $listings as $row ){
+                  $biz_info = json_decode($row->info);   
+                  $biz_info = get_object_vars($biz_info);
+                  $cats = implode(", ", $biz_info['menu-715']);
+                  //echo '<pre>'.print_r($biz_info,true).'</pre>';
+                  // Each $row is a row from the query
+                  echo '<tr>';
+                  echo '<td>' . $row->bsid . '</td>';
+                  echo '<td>' . $biz_info['text-881'] . ' ' . $biz_info['text-949'] . '</td>';
+                  echo '<td>' . $biz_info['your-email'] . '</td>';
+                  echo '<td>' . $biz_info['text-99'] . '</td>';
+                  echo '<td>' . $biz_info['text-94'] . '</td>';
+                  echo '<td>' . $biz_info['tel-637'] . '</td>';
+                  echo '<td>' . $biz_info['text-730'] . '</td>';
+                  echo '<td>' . $cats . '</td>';
+                  echo '<td>' . $biz_info['text-842'] . '</td>';
+                  echo '<td>' . $biz_info['url-442'] . '</td>';
+                  echo '<td>' . $biz_info['your-message'] . '</td>';
+                  echo '<td>' . $row->uploaded . '</td>';
+                  echo '<td style="text-align:center;"><input style="margin-bottom: 3px;" class="re_upload_listing button-primary" type="button" lang="'.$row->bsid.'" value="Re-Upload"></td>';
+                  echo '</tr>';
+                      }
+                  
+            }     echo '</table>';
+            ?>
+        </div>
+    </div>
+</div>
