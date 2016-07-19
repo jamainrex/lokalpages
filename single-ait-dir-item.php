@@ -122,6 +122,9 @@ $latteParams['isServGPSMapDisable'] = get_post_meta( $latteParams['post']->id, '
 $latteParams['isServMapDisable'] = get_post_meta( $latteParams['post']->id, '_serv_map_disable', true );
 $latteParams['isServShowInformation'] = get_post_meta( $latteParams['post']->id, '_serv_content_show', true );
 
+// Disable for now the Show Information feature.
+$latteParams['isServShowInformation'] = true;
+
 //echo '<pre>'.print_r($_GET,true).'</pre>';
 $latteParams['isDirection'] = ( isset( $_GET['direction'] ) && $_GET['direction'] == 'yes' ) ? true : false; 
 
