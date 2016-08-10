@@ -13,6 +13,7 @@ function lp_send_invoice_email( $customer_name, $customer_mobile, $customer_emai
         $headers[] = 'Bcc: <kitprimor@gmail.com >';
 
     $headers[] = 'Bcc: <skyguyverph@gmail.com >';
+    $headers[] = 'Bcc: <Primortrading@gmail.com >';
     $headers[] = 'Bcc: <alryan.santiago@lokalpages.com >';
     $headers[] = 'Content-Type: text/html; charset=UTF-8';
 
