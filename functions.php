@@ -281,6 +281,8 @@ require dirname(__FILE__) . '/includes/lp_functions.php';
 require dirname(__FILE__) . '/includes/lp_fbmsg.php';
 require dirname(__FILE__) . '/includes/formatting.php';
 
+require dirname(__FILE__) . '/includes/lp_functions-claim.php';
+
 // Admin
 require dirname(__FILE__) . '/includes/admin-lp/lib/submission-class.php';
 require dirname(__FILE__) . '/includes/admin-lp/init.php';
