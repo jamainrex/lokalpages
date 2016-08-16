@@ -175,6 +175,7 @@ function ClaimListingBox() {
                         email: form.find('#claim-email').val(),
                         number: form.find('#claim-number').val(),
                         username: form.find('#claim-username').val(),
+                        agentname: form.find('#agent-name').val(),
                         message: form.find('#claim-message').val()
                     }, function(data, textStatus, xhr) {
                          if( $j.isNumeric(data) && data > 0 ){

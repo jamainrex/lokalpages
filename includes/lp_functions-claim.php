@@ -3,7 +3,7 @@
 /**
  * Send Invoice email
  */
-function lp_send_invoice_email( $customer_name, $customer_mobile, $customer_email, $postId )
+function lp_send_invoice_email( $customer_name, $customer_mobile, $customer_email, $agent_name, $postId )
 {
     $post = get_post( $postId );
     $to = $customer_email;
@@ -17,14 +17,14 @@ function lp_send_invoice_email( $customer_name, $customer_mobile, $customer_emai
     $headers[] = 'Bcc: <alryan.santiago@lokalpages.com >';
     $headers[] = 'Content-Type: text/html; charset=UTF-8';
 
-    $result = wp_mail( strip_tags($to), "Lokalpages-Invoice - ".$post->post_title, lp_invoice_email_bodyTemplate( strip_tags( $customer_name ), strip_tags( $customer_mobile ) ), $headers );
+    $result = wp_mail( strip_tags($to), "Lokalpages-Invoice - ".$post->post_title, lp_invoice_email_bodyTemplate( strip_tags( $customer_name ), strip_tags( $customer_mobile ), strip_tags( $agent_name ) ), $headers );
     if (!$result) {
         _e( 'Error with sending email', 'ait' );
         exit();
     }
 }
 
-function lp_invoice_email_bodyTemplate( $customer_name, $customer_mobile )
+function lp_invoice_email_bodyTemplate( $customer_name, $customer_mobile, $agent_name )
 {
     ob_start();
     $invoice_date = date("F j, Y");

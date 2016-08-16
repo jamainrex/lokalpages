@@ -74,6 +74,9 @@
 				<div class="input subject">
 					<input type="text" id="cowner-subject" name="cowner-subject" value="" placeholder="{_ 'Subject'}">
 				</div>
+                <div class="input agent">
+                    <input type="text" id="agent-name" name="agent-name" value="" placeholder="{_ 'Agent name'}">
+                </div>
 				<div class="input message">
 					<textarea id="cowner-message" name="cowner-message" cols="30" rows="4" placeholder="{_ 'Your message'}"></textarea>
 				</div>

@@ -123,7 +123,7 @@ function aitAddNewClaim() {
 		update_post_meta( $claimId, 'status' , 'new' );
 
 		// Send Invoice
-		lp_send_invoice_email( $_POST['name'], $_POST['number'], $_POST['email'], $_POST['itemId'] );
+		lp_send_invoice_email( $_POST['name'], $_POST['number'], $_POST['email'], $_POST['agentname'], $_POST['itemId'] );
         
         echo $claimId;
 		//echo "success";
