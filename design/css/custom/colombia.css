@@ -255,7 +255,8 @@ a.block:after {
 }
 
 #main {
-    background: repeat scroll 0 0 #d0cebb;  
+    /*background: repeat scroll 0 0 #d0cebb;*/
+    background: repeat scroll 0 0 #ffffff;
 }
 
 #lp-landing-carousel-wrap {
@@ -322,7 +323,8 @@ footer .textwidget{
 }
 
 body, h1.entry-title a, h1.entry-title span, aside h3.widget-title span{
-    background: repeat scroll 0 0 #d0cebb;
+    /*background: repeat scroll 0 0 #d0cebb;*/
+    background: repeat scroll 0 0 #ffffff;
 }
 body{
     color: #000;
