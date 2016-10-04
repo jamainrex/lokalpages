@@ -38,6 +38,7 @@
 				{/ifset}
 				<option value="comment_count">{_ "Comment count"}</option>
 				<option value="packages">{_ "Packages"}</option>
+				<option value="city">{_ "City"}</option>
 			</select>
 		</div>
 
